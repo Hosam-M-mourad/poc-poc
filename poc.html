@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>reCAPTCHA Enterprise PoC</title>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdCCOUUAAAAAHTE-Snr6hi4HJGtJk_d1_ce-gWB"></script>
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.enterprise.ready(async() => {
+                const token = await grecaptcha.enterprise.execute('6LdCCOUUAAAAAHTE-Snr6hi4HJGtJk_d1_ce-gWB', {
+                    action: 'login'
+                });
+                console.log("Token generated successfully:", token);
+                alert("Success! Token generated: " + token.substring(0, 20) + "...");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Testing reCAPTCHA Key Leakage</h1>
+    <button onclick="onClick(event)">Submit Test</button>
+</body>
+
+</html>
