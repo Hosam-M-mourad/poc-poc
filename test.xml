@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SSRF Test</title>
+    <link>http://example.com</link>
+    <description>Testing Odesli API</description>
+    <item>
+      <title>Exploit Title</title>
+      <description>If you see this, SSRF is working.</description>
+    </item>
+  </channel>
+</rss>
